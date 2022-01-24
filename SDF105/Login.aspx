@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>LOG IN FORM</title>
-    <link href="loginbg.css" rel="stylesheet"/>
+    <link href="cust-css/loginbg.css" rel="stylesheet" />
 </head>
 <body> 
     <div class="loginbox">
@@ -13,13 +13,13 @@
         <h2>Log In Here</h2>
         <form runat="server">
             <asp:Label Text="Username" cssClass="lbluser" runat="server" ID="Label1" />
-            <asp:Textbox runat="server" cssClass="txtuser" placeholder="Enter Username"/>
+            <asp:Textbox runat="server" cssClass="txtuser" placeholder="Enter Username" ID="user_txtbox"/>
             <br />
             <asp:Label Text="Password" cssClass="lblpass" runat="server" ID="Label2" />
 
-            <asp:Textbox runat="server" cssClass="txtpass" placeholder="********"/>
+            <asp:Textbox runat="server" cssClass="txtpass" placeholder="********" ID="pass_txtbox"/>
             <br />
-            <asp:Button ID="Button1" Text="Sign In" cssclass="btnsign" runat="server"/>
+            <asp:Button ID="Button1" Text="Sign In" cssclass="btnsign" runat="server" OnClick="Button1_Click"/>
             <br />
             <asp:LinkButton Text="Forget Password" cssclass="lnkforget" runat="server"/>
         </form>

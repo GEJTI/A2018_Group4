@@ -4,82 +4,101 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css"/>
+    <%--<title>Homepage</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <link href="cust-css/StyleSheet.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>--%>
+
+        <meta charset="utf-8" />
+        <title>Sidebar Dashboard Template With Sub Menu</title>
+        <link href="cust-css/StyleSheet.css" rel="stylesheet" />
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="wrapper">
-    <!--NAVIGATION-->
-       <nav>
-          <img src="img/ca.png" class="img" alt="logo"/> 
-          <ul>
-              <li><a href="#">HOME</a></li>
-              <li><a href="#">ABOUT</a></li>
-              <li><a href="#">COURSES</a></li>
-              <li><a href="#">EVENTS</a></li>
-              <li><a href="#">GALLERY</a></li>
-              <li><a href="#">BLOG</a></li>
-              <li><a href="#">PAGES</a></li>
-              <li><a href="#">CONTACT</a></li>
-          </ul>
-       </nav>
-<!--END OF NAVIGATION-->
-        <div class="section">
-          <h1>WE ENSURE A BETTER EDUCATION <br/> FOR A BETTER WORLD</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corporis, illum, rerum praesentium cupiditate inventore sed vero itaque impedit, recusandae eaque. Eligendi harum, molestias ducimus eum quas ut officia sit?</p>
-          
-          <a href="#"><asp:Button ID="Button1" cssclass="btn-1"  runat="server" Text="GET STARTED"/></a>
-<!--FEATURES-->
-         <div class="features">
-             <asp:Button  Text="Learn Online Classes" ID="btnlearn" cssclass="btn-learn"  runat="server"/>
-             <asp:Button Text= "Bridge Courses" ID="btnbc" cssclass="btn-bc"  runat="server"/>
-             <asp:Button Text="Huge Library" ID="btnlib" cssclass="btn-lib"  runat="server"/>
-             <asp:Button Text="Practical Exposure" ID="btnpe" cssclass="btn-pe"  runat="server"/>
-         </div>
-<!--END OF FEATURES-->
+   
+    <input type="checkbox" id="check"/>
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>Hot <span>Dog</span></h3>
       </div>
-<!--END OF SECTION-->
-   </div>
-<!--END OF WRAPPER-->
+      <div class="right_area">
+        <a href="#" class="logout_btn">Logout</a>
+      </div>
+    </header>
+    <!--header area end-->
+    <!--mobile navigation bar start-->
+    <div class="mobile_nav">
+      <div class="nav_bar">
+        <img src="1.png" class="mobile_profile_image" alt="">
+        <i class="fa fa-bars nav_btn"></i>
+      </div>
+      <div class="mobile_nav_items">
+        <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
+        <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
+        <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+        <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+        <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+      </div>
+    </div>
+    <!--mobile navigation bar end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="1.png" class="profile_image" alt="">
+        <h4>Jessica</h4>
+      </div>
+      <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
+      <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
+      <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+      <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+    </div>
+    <!--sidebar end-->
 
-        <!--SHOWCASE-->
-   <showcase>
-       <h1>POPULAR COURSES WE OFFER</h1>
-       <div id="courses">
-           <div class="cs">
-               <h3>Computer Science</h3>
-               <img src="img/cse.jpeg" width="50%" alt="cs" />
-               <a href="#" ><asp:Button Text="Apply Here" class="apply" ID="apply" cssclass="btn-apply"  runat="server"/></a>
-           </div>
-           <div class="business">
-               <h3>Business Studies</h3>
-               <img src="img/business.jpeg" alt="business"/>
-               <a href="#" ><asp:Button Text="Apply Here" class="apply" ID="apply2" cssclass="btn-apply"  runat="server"/></a>
-           </div>
-           <div class="journalism">
-               <h3>Media and Journalism</h3>
-               <img src="img/journalism.jpeg" alt="media"/>
-               <a href="#" ><asp:Button Text="Apply Here" class="apply" ID="apply3" cssclass="btn-apply"  runat="server"/></a>
-           </div>
-           <div class="arts">
-               <h3>Arts & Humanities</h3>
-               <img src="img/arts.jpeg" alt="arts"/>
-               <a href="#" ><asp:Button Text="Apply Here" class="apply" ID="apply4" cssclass="btn-apply"  runat="server"/></a>
-           </div>
-           <div class="medical">
-               <h3>Medical Science</h3>
-               <img src="img/medical.jpeg" alt="ms"/>
-               <a href="#" ><asp:Button Text="Apply Here" class="apply" ID="apply5" cssclass="btn-apply"  runat="server"/></a>
-           </div>
-       </div>
-   </showcase>
-<!--END OF SHOWCASE-->
+    <div class="content">
+      <div class="card">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+      <div class="card">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+      <div class="card">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+
+    <!--- End of navbar--->
+
+    <!-- start of card-->
+    
+    <!-- end of card-->
+
     </form>
 
-    <footer>
-       <p>Copyright &copy; 2022, Group 4 BSCS A2018</p>
-   </footer>
 </body>
 </html>
