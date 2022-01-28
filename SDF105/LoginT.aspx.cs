@@ -40,4 +40,9 @@ public partial class Login : System.Web.UI.Page
             Response.Write(ex.Message);
         }
     }
+
+    protected void reg_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/RegFormT.aspx");
+    }
 }

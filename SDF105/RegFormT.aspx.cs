@@ -12,18 +12,27 @@ public partial class RegistrationForm : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-      
+
     }
 
     protected void submit_Click(object sender, EventArgs e)
     {
+        string gender = string.Empty;
+        if(RMale.Checked)
+        {
+            gender = "Male";
+        }else
+        {
+            gender = "Female";
+        }
+
         string constr = WebConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         SqlConnection con = new SqlConnection(constr);
 
         try
         {
             con.Open();
-            SqlCommand cmd0 = new SqlCommand("SELECT COUNT(*) FROM [dbo].[studregform] WHERE student_id='" + inputstud_id.Text + "' ", con);
+            SqlCommand cmd0 = new SqlCommand("SELECT COUNT(*) FROM [dbo].[studregform] WHERE student_id='" + inputteacher_id.Text + "' ", con);
             SqlDataAdapter sda0 = new SqlDataAdapter(cmd0);
             DataTable dt0 = new DataTable();
             sda0.Fill(dt0);
@@ -58,25 +67,27 @@ public partial class RegistrationForm : System.Web.UI.Page
                             {//start of insert data
                                 con.Close();
                                 con.Open();
-                                SqlCommand cmd1 = new SqlCommand(@"INSERT INTO [dbo].[studregform]
-                             ([student_id],[username]
-                            ,[password]
-                            ,[firstname]
-                            ,[middlename]
-                            ,[lastname]
-                            ,[address]
-                            ,[city]
-                            ,[state]
-                            ,[postal]
-                            ,[country]
-                            ,[pnumber]
-                            ,[email] )
-                            VALUES
-                            ('" + inputstud_id.Text + "', '" + inputusername.Text + "', '" + inputPassword.Text + "', '" + inputLastname.Text + "', '" + inputfirstname.Text + "', '" + inputmiddlename.Text + "', '" + inputAddress.Text + "', '" + inputCity.Text + "', '" + inputState.Text + "', '" + inputZip.Text + "', '" + inputcountry.Text + "', '" + inputpnumber.Text + "', '" + inputEmail.Text + "')", con);
+                                SqlCommand cmd1 = new SqlCommand(@"INSERT INTO [dbo].[teacherregform]
+           ([teacher_id]
+           ,[username]
+           ,[password]
+           ,[firstname]
+           ,[middlename]
+           ,[lastname]
+           ,[gender]
+           ,[address]
+           ,[city]
+           ,[state]
+           ,[postal]
+           ,[country]
+           ,[pnumber]
+           ,[email])
+     VALUES
+                            ('" + inputteacher_id.Text + "', '" + inputusername.Text + "', '" + inputPassword.Text + "', '" + inputLastname.Text + "', '" + inputfirstname.Text + "', '" + inputmiddlename.Text + "', '" + gender + "', '" + inputAddress.Text + "', '" + inputCity.Text + "', '" + inputState.Text + "', '" + inputZip.Text + "', '" + inputcountry.Text + "', '" + inputpnumber.Text + "', '" + inputEmail.Text + "')", con);
                                 cmd1.ExecuteNonQuery();
                                 Response.Write("<script>alert ('Registered Successfully')</script> ");
                                 con.Close();
-                                inputstud_id.Text = "";
+                                inputteacher_id.Text = "";
                                 inputusername.Text = "";
                                 inputPassword.Text = "";
                                 inputLastname.Text = "";
@@ -114,11 +125,11 @@ public partial class RegistrationForm : System.Web.UI.Page
         {
         }
 
-        
 
-        
 
-        
+
+
+
     }
 
     protected void inputstud_id_TextChanged(object sender, EventArgs e)

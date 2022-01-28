@@ -17,6 +17,16 @@ public partial class RegistrationForm : System.Web.UI.Page
 
     protected void submit_Click(object sender, EventArgs e)
     {
+        string gender = string.Empty;
+        if (RMale.Checked)
+        {
+            gender = "Male";
+        }
+        else
+        {
+            gender = "Female";
+        }
+
         string constr = WebConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString;
         SqlConnection con = new SqlConnection(constr);
 
@@ -59,20 +69,22 @@ public partial class RegistrationForm : System.Web.UI.Page
                                 con.Close();
                                 con.Open();
                                 SqlCommand cmd1 = new SqlCommand(@"INSERT INTO [dbo].[studregform]
-                             ([student_id],[username]
-                            ,[password]
-                            ,[firstname]
-                            ,[middlename]
-                            ,[lastname]
-                            ,[address]
-                            ,[city]
-                            ,[state]
-                            ,[postal]
-                            ,[country]
-                            ,[pnumber]
-                            ,[email] )
-                            VALUES
-                            ('" + inputstud_id.Text + "', '" + inputusername.Text + "', '" + inputPassword.Text + "', '" + inputLastname.Text + "', '" + inputfirstname.Text + "', '" + inputmiddlename.Text + "', '" + inputAddress.Text + "', '" + inputCity.Text + "', '" + inputState.Text + "', '" + inputZip.Text + "', '" + inputcountry.Text + "', '" + inputpnumber.Text + "', '" + inputEmail.Text + "')", con);
+           ([student_id]
+           ,[username]
+           ,[password]
+           ,[firstname]
+           ,[middlename]
+           ,[lastname]
+           ,[gender]
+           ,[address]
+           ,[city]
+           ,[state]
+           ,[postal]
+           ,[country]
+           ,[pnumber]
+           ,[email])
+     VALUES
+                            ('" + inputstud_id.Text + "', '" + inputusername.Text + "', '" + inputPassword.Text + "', '" + inputLastname.Text + "', '" + inputfirstname.Text + "', '" + inputmiddlename.Text + "', '" + gender + "', '" + inputAddress.Text + "', '" + inputCity.Text + "', '" + inputState.Text + "', '" + inputZip.Text + "', '" + inputcountry.Text + "', '" + inputpnumber.Text + "', '" + inputEmail.Text + "')", con);
                                 cmd1.ExecuteNonQuery();
                                 Response.Write("<script>alert ('Registered Successfully')</script> ");
                                 con.Close();

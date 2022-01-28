@@ -12,6 +12,7 @@ position:absolute;
 top:50%;
 left:50%;
 transform: translate(-50%,-50%);
+border-radius:20px;
 width:350px;
 height:420px;
 padding:80px 40px;

@@ -11,19 +11,19 @@
     <!-- Bootstrap CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
-    <title>Registration Form</title>
+    <title>Student Registration Form</title>
 </head>
 <body style="background-color: #7b6ee6; padding: 20px;">
 
     <form id="form1" runat="server">
         
         <div class="container" style="background-color: #ffffff; padding: 20px; border-radius: 8px;">
-            <h2>Registration Form</h2>
-            <h6>A.Y. 2021-2022</h6><br />
+            <h2>Student Registration Form</h2>
+            
             <p>Please the fill the form below</p>
             <p style="color:red">* Required</p>
             <div class="col-md-12">
-                <label><asp:Label runat="server" for="inputstud_id" CssClass="form-label">Student Number&nbsp;</asp:Label><span style="font-size:10px">(NUMBERS ONLY) &nbsp</span><span style="color:red">*</span></label>
+                <label><asp:Label runat="server" for="inputstud_id" CssClass="form-label">Student ID Number&nbsp;</asp:Label><span style="font-size:10px">(NUMBERS ONLY) &nbsp</span><span style="color:red">*</span></label>
                 <asp:TextBox runat="server" type="text" CssClass="form-control" ID="inputstud_id" placeholder="Student Number" OnTextChanged="inputstud_id_TextChanged" required="true"/>
             </div>
             <br />
@@ -63,6 +63,15 @@
                 <asp:Label runat="server" for="inputmiddlename" CssClass="form-label">Middle Name</asp:Label>
                 <asp:TextBox runat="server" type="text" CssClass="form-control" ID="inputmiddlename" placeholder="Middle Name" required="true"/>
             </div>
+            <br />
+            <div class="col-md-12">
+            <asp:Label runat="server" for="inputmiddlename" CssClass="form-label">Gender</asp:Label>
+            <br />
+            <asp:RadioButton ID="RMale" runat="server" Text="&nbsp;Male" GroupName="Gender"/>
+            <br />
+            <asp:RadioButton ID="RFemale" runat="server" Text="&nbsp;Female" GroupName="Gender"/>
+            <br />
+                </div>
             <br />
             <div class="col-12">
                 <asp:Label runat="server" for="inputAddress" CssClass="form-label">Address</asp:Label>
