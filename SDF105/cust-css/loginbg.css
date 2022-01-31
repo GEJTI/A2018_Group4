@@ -81,6 +81,23 @@ h2{
 .btnsign:hover {
         background-color: rgb(255,9,9);
 }
+.btncrt{
+    width:100%;
+    margin-bottom:20px;
+    border:none; 
+    outline:none;
+    height:40px;
+    font-size:16px;
+    color:#fff;
+    background-color:rgb(9,200,9);
+    cursor:pointer;
+    border-radius:20px;
+    transition: .3s ease-in-out;
+}
+.btncrt:hover {
+        background-color: rgb(255,9,9);
+}
+
 
 ::placeholder{
     color:rgba(255,255,255,0.5);
