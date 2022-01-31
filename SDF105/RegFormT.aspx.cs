@@ -32,14 +32,14 @@ public partial class RegistrationForm : System.Web.UI.Page
         try
         {
             con.Open();
-            SqlCommand cmd0 = new SqlCommand("SELECT COUNT(*) FROM [dbo].[studregform] WHERE student_id='" + inputteacher_id.Text + "' ", con);
+            SqlCommand cmd0 = new SqlCommand("SELECT COUNT(*) FROM [dbo].[teacherregform] WHERE teacher_id='" + inputteacher_id.Text + "' ", con);
             SqlDataAdapter sda0 = new SqlDataAdapter(cmd0);
             DataTable dt0 = new DataTable();
             sda0.Fill(dt0);
             cmd0.ExecuteNonQuery();
             if (dt0.Rows[0][0].ToString() == "1")
             {
-                Response.Write("<script>alert ('Student Number already exist, please double check your student id number')</script> ");
+                Response.Write("<script>alert ('Student Number already exist, please double check your teacher id number')</script> ");
 
             }
             else
@@ -48,7 +48,7 @@ public partial class RegistrationForm : System.Web.UI.Page
                 {//start of check if there same username
                     con.Close();
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [dbo].[studregform] WHERE username='" + inputusername.Text + "' ", con);
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM [dbo].[teacherregform] WHERE username='" + inputusername.Text + "' ", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -100,6 +100,7 @@ public partial class RegistrationForm : System.Web.UI.Page
                                 inputcountry.Text = "";
                                 inputpnumber.Text = "";
                                 inputEmail.Text = "";
+                                Response.Redirect("LoginT.aspx");
                             }
                             catch (Exception ex)
                             {
