@@ -79,3 +79,4 @@ D:\GitHub\A2018_Group4\cictlms\cictlms\bin\Microsoft.Owin.Security.Twitter.xml
 D:\GitHub\A2018_Group4\cictlms\cictlms\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\GitHub\A2018_Group4\cictlms\cictlms\obj\Release\cictlms.dll
 D:\GitHub\A2018_Group4\cictlms\cictlms\obj\Release\cictlms.pdb
+D:\GitHub\A2018_Group4\cictlms\cictlms\obj\Release\cictlms.csprojResolveAssemblyReference.cache
